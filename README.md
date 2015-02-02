@@ -1,4 +1,4 @@
-# code_critic
+# code_critic [![Build Status](https://travis-ci.org/damien/code_critic.svg?branch=develop)](https://travis-ci.org/damien/code_critic) [![Code Climate](https://codeclimate.com/github/damien/code_critic/badges/gpa.svg)](https://codeclimate.com/github/damien/code_critic) [![Test Coverage](https://codeclimate.com/github/damien/code_critic/badges/coverage.svg)](https://codeclimate.com/github/damien/code_critic)
 
 Code Critic is a tool for automatically and intelligently assigning
 one or more people to perform a code review.
