@@ -13,6 +13,8 @@ module ActiveSupport
   # ActiveSupport::TestCase defines logic shared between all test cases
   # in this test suit
   class TestCase
+    include Devise::TestHelpers
+
     # Setup all fixtures in test/fixtures/*.yml
     # for all tests in alphabetical order.
     fixtures :all
