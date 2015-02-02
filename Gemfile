@@ -17,3 +17,8 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'yard'
 end
+
+group :test do
+  gem 'codeclimate-test-reporter', require: false
+  gem 'simplecov', require: false
+end
