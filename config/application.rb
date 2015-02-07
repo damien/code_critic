@@ -6,6 +6,16 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+# You can ignore the environment variable sanity check by running the
+# application or associated rake tasks by setting
+# the `WITHOUT_ENV` environment variable
+unless ENV['WITHOUT_ENV']
+  # Ensure environment variables specified within Envfile
+  # are available to the application
+  Dotenv.load
+  ENVied.require(*ENV['ENVIED_GROUPS'] || Rails.groups)
+end
+
 module CodeCritic
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.

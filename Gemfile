@@ -1,8 +1,14 @@
 source 'https://rubygems.org'
 
+# Note: Dotenv is a bit special in that it needs to be loaded before any other
+# gems to ensure that all env var based configurations are available during
+# the application intitialization process
+gem 'dotenv'
+
 gem 'coffee-rails', '~> 4.1.0'
 gem 'devise'
 gem 'devise-authy'
+gem 'envied', github: 'damien/envied', branch: 'feature/optional_and_non_optional_variables'
 gem 'haml-rails', '~> 0.8'
 gem 'jquery-rails'
 gem 'omniauth-github'
