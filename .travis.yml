@@ -8,7 +8,15 @@ cache:
   - bundler
   - apt
 
+before_script:
+  - rake db:setup
+
+script:
+  - bundle exec rake
+
 addons:
+  postgresql: '9.3'
+
   code_climate:
     repo_token:
       secure: 'kuBlU99XkssFqCzqc1Fi1xJPV2yr8D2/emtlsq+637aXhIw+COBgunW2/pVY3JeTVfEQZGb37dJ/2W/Vg8za5L1uHYXHGcoEIAxjVtMFzGADCH6alSSLN0WxMJBjZh/znmbcbq4C+uDrI37VkQTNbukeyW4zVLyxj3agwK5CwLI='
