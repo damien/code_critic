@@ -1,17 +1,20 @@
-!!!
-%html
+!!! 5
+%html{ lang: 'en' }
   %head
-    %meta{ content: 'text/html; charset=UTF-8', 'http-equiv' => 'Content-Type' }
+    %meta{ charset: 'utf-8'}
+    %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1.0' }
 
-    %title Code Critic
+    %title= content_for?(:title) ? content_for(:title) : 'Code Critic'
 
     = stylesheet_link_tag 'application', media: 'all'
-    = javascript_include_tag 'application'
-    = csrf_meta_tags
-
-    = javascript_include_tag 'https://www.authy.com/form.authy.min.js'
     = stylesheet_link_tag 'https://www.authy.com/form.authy.min.css'
+
+    = javascript_include_tag 'vendor/modernizr'
+    = javascript_include_tag 'application'
+    = javascript_include_tag 'https://www.authy.com/form.authy.min.js'
     = javascript_include_tag 'devise_authy.js'
+
+    = csrf_meta_tags
 
   %body
     = render partial: 'shared/navigation'

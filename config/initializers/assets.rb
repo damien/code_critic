@@ -12,4 +12,5 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w(
   devise_authy.js
   devise_authy.css
+  vendor/modernizr.js
 )
