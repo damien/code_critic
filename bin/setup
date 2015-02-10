@@ -49,7 +49,7 @@ Dir.chdir APP_ROOT do
   puts
   if sca.errors?
     puts '=' * 80
-    puts 'A `.env` file for you in the root of your application directory.'
+    puts 'A `.env` file has been created for you in the root of your application directory.'
     puts
     puts <<-MSG.gsub(/^\s+/, '')
       You can check Envfile to determine what variables are required to run the

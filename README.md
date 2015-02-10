@@ -13,6 +13,15 @@ Code Critic is a work in progress. The project goals are as follows:
   3. Attempt to optimize throughput of code reviews by evenly distributing
      the number of requested code reviews per reviewer.
 
+# Running Code Critic
+
+  1. Check out the Code Critic git repository:
+     `git clone https://github.com/damien/code_critic.git`
+  2. Run the setup script:
+     `cd code_critic ; bin/setup`
+  3. Start Code Critic:
+     `bundle exec rails serve`
+
 # License
 
 This code is released under the [MIT license](LICENSE)
