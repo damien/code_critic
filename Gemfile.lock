@@ -87,6 +87,7 @@ GEM
     devise-authy (1.6.0)
       authy
       devise
+    diff-lcs (1.2.5)
     docile (1.1.5)
     dotenv (1.0.2)
     erubis (2.7.0)
@@ -200,6 +201,23 @@ GEM
     rake (10.4.2)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
+    rspec-core (3.2.0)
+      rspec-support (~> 3.2.0)
+    rspec-expectations (3.2.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.2.0)
+    rspec-mocks (3.2.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.2.0)
+    rspec-rails (3.2.0)
+      actionpack (>= 3.0, <= 4.2)
+      activesupport (>= 3.0, <= 4.2)
+      railties (>= 3.0, <= 4.2)
+      rspec-core (~> 3.2.0)
+      rspec-expectations (~> 3.2.0)
+      rspec-mocks (~> 3.2.0)
+      rspec-support (~> 3.2.0)
+    rspec-support (3.2.1)
     rubocop (0.28.0)
       astrolabe (~> 1.3)
       parser (>= 2.2.0.pre.7, < 3.0)
@@ -273,6 +291,7 @@ DEPENDENCIES
   pry-byebug
   pry-rails
   rails (= 4.2.0)
+  rspec-rails (~> 3.0)
   rubocop
   sass-rails (~> 5.0)
   simple_form

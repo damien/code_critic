@@ -24,6 +24,7 @@ group :development, :test do
   gem 'pry'
   gem 'pry-byebug'
   gem 'pry-rails'
+  gem 'rspec-rails', '~> 3.0'
   gem 'rubocop'
   gem 'web-console', '~> 2.0'
   gem 'yard'
