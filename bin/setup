@@ -4,6 +4,11 @@ require 'pathname'
 # path to your application root.
 APP_ROOT = Pathname.new File.expand_path('../../',  __FILE__)
 
+# This is an ad-hoc class for tracking if any commands run through it
+# have failed at any point.
+#
+# This class is primarily used to determine if the setup script (`bin/setup`)
+# has run successfully.
 class SystemCallAggregator
   def initialize
     @results = []
@@ -49,7 +54,11 @@ Dir.chdir APP_ROOT do
   puts
   if sca.errors?
     puts '=' * 80
-    puts 'A `.env` file has been created for you in the root of your application directory.'
+    puts <<-MSG.gsub(/^\s+/, '')
+      'A `.env` file has been created for you in the root
+      of your application directory.'
+    MSG
+
     puts
     puts <<-MSG.gsub(/^\s+/, '')
       You can check Envfile to determine what variables are required to run the
