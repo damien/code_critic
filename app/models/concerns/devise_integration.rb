@@ -5,6 +5,7 @@ module DeviseIntegration
 
   # Devise modules to load for user authentication
   DEVISE_MODULES = %i(
+    authenticatable
     authy_authenticatable
     confirmable
     database_authenticatable
