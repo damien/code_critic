@@ -1,9 +1,9 @@
 RSpec.shared_examples 'DeviseIntegration' do
   it 'includes Devise modules defined in DeviseIntegration::DEVISE_MODULES' do
     loaded_devise_modules = described_class
-      .included_modules
-      .select { |mod| mod.to_s.starts_with?('Devise::Models') }
-      .map { |klass| klass.to_s.underscore.split('/').last.to_sym }
+                            .included_modules
+                            .select { |mod| mod.to_s.starts_with?('Devise::Models') }
+                            .map { |klass| klass.to_s.underscore.split('/').last.to_sym }
 
     expect(loaded_devise_modules.to_set).to eq(
       DeviseIntegration::DEVISE_MODULES.to_set

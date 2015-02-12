@@ -1,6 +1,4 @@
-if defined?(Dotenv)
-  require 'dotenv/tasks'
-end
+require 'dotenv/tasks' if defined?(Dotenv)
 
 desc <<-DESC.strip_heredoc
   Generate a .env file
@@ -32,7 +30,7 @@ task :generate_dotenv do
     GITHUB_APP_SECRET=#{ENV['GITHUB_APP_SECRET']}
   TEMPLATE
 
-  if File.exists?(env_file)
+  if File.exist?(env_file)
     puts ".env file already exists at #{env_file}"
 
   else
