@@ -4,6 +4,10 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def github
     @user = github_user_from_omniauth(auth_hash)
 
+    # Don't bother confirming emails from Github;
+    # we trust Github to do that for us
+    @user.skip_confirmation!
+
     if @user.persisted?
       # :authentication will be thrown if @user is not activated
       sign_in_and_redirect @user
