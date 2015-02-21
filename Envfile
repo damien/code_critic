@@ -3,3 +3,4 @@ variable :SECRET_KEY_BASE, :string, allow_blank: false
 variable :AUTHY_API_KEY, :string, allow_blank: false
 variable :GITHUB_APP_KEY, :string, allow_blank: false
 variable :GITHUB_APP_SECRET, :string, allow_blank: false
+variable :EMAIL, :string, allow_blank: false
