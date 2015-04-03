@@ -24,4 +24,10 @@
         - flash.each do |key, message|
           .alert{ class: format('alert-%s', key) }= message
 
-    = yield
+    - if content_for?(:body)
+      = content_for(:body)
+
+    - else
+      .row
+        .small-12.centered.columns
+          = yield

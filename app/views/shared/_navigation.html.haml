@@ -1,4 +1,17 @@
-- if user_signed_in?
-  You are currently signed in as #{current_user.email}
-- else
-  = link_to 'Sign in', new_user_session_path
+%nav.top-bar{ role: 'navigation', data: { topbar: nil } }
+  %ul.title-area
+    %li.name
+      %h1= link_to 'Code Critic', root_path
+    %li.toggle-topbar.menu-icon
+      %a{ href: '#' }
+        %span Menu
+
+  %section.top-bar-section
+    %ul.right
+      - if user_signed_in?
+        %li
+          You are currently signed in as #{current_user.email}
+          = link_to 'Sign out', destroy_user_session_path, method: :delete
+
+      - elsif !current_page?(controller: 'devise/sessions', action: 'new')
+        %li= link_to 'Sign in', new_user_session_path
