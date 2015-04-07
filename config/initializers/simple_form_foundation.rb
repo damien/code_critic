@@ -91,6 +91,39 @@ SimpleForm.setup do |config|
     # b.use :hint,  wrap_with: { tag: :span, class: :hint }
   end
 
+  # Support for displaying boolean inputs as Zurb Foundation Switches
+  # @see Switch http://foundation.zurb.com/docs/components/switch.html
+  config.wrappers :switch, tag: 'div', label_input: false do |b|
+    b.use :html5
+
+    b.use :label
+
+    b.wrapper tag: 'div', class: 'switch' do |ba|
+      ba.use :input
+      ba.use :label
+    end
+  end
+
+  # Support for displaying boolean inputs as Zurb Foundation Switches
+  # @see Switch http://foundation.zurb.com/docs/components/switch.html
+  config.wrappers :horizontal_switch, class: 'row' do |b|
+    b.use :html5
+
+    b.wrapper :label_wrapper, class: 'small-3 columns' do |ba|
+      ba.use :label, class: 'right inline'
+    end
+
+    b.wrapper :right_input_wrapper, class: 'small-9 columns' do |ba|
+      ba.wrapper tag: 'fieldset', class: 'switch', tabindex: '0' do |bb|
+        bb.use :input
+        bb.use :label
+      end
+
+      ba.use :error, wrap_with: { tag: :small, class: :error }
+      # ba.use :hint,  wrap_with: { tag: :span, class: :hint }
+    end
+  end
+
   # CSS class for buttons
   config.button_class = 'button'
 
