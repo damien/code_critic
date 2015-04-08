@@ -12,8 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require devise_authy
+//= require fastclick
+//= require foundation/foundation
 //= require foundation
-//= require_tree .
 
 $(function(){
   $(document).foundation();

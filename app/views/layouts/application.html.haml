@@ -10,9 +10,7 @@
     = stylesheet_link_tag 'https://www.authy.com/form.authy.min.css'
 
     = javascript_include_tag 'vendor/modernizr'
-    = javascript_include_tag 'application'
     = javascript_include_tag 'https://www.authy.com/form.authy.min.js'
-    = javascript_include_tag 'devise_authy.js'
 
     = csrf_meta_tags
 
@@ -20,9 +18,12 @@
     = render partial: 'shared/navigation'
 
     - unless flash.empty?
-      #alerts
-        - flash.each do |key, message|
-          .alert{ class: format('alert-%s', key) }= message
+      .row#alerts
+        .small-12.centered.columns
+          - flash.each do |key, message|
+            .alert-box{ class: key, data: { alert: true } }
+              = message
+              %a.close{ href: '#' } &times;
 
     - if content_for?(:body)
       = content_for(:body)
@@ -31,3 +32,5 @@
       .row
         .small-12.centered.columns
           = yield
+
+    = javascript_include_tag 'application'
